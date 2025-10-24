@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdom of the Gita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='Byemotion.css') }}">
+</head>
+<body>
+    <div class="card-container">
+        <header>
+            <h1 class="title-font">Emotion Feed</h1>
+            <p>"कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।"</p>
+            <p>"You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions."</p>
+        </header>
+        <!-- Main Content Area -->
+        <main>
+            <p>Welcome to the Emotion Feed. Here you can explore various emotions and their significance in BhagvadGita.</p>
+            <!-- User Input Section -->
+            <div class="emotion-buttons">
+                <button class="styled-button emotion-button" data-emotion="Admiration" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Admiration</button>
+                <button class="styled-button emotion-button" data-emotion="Adoration" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Adoration</button>
+                <button class="styled-button emotion-button" data-emotion="Aesthetic Appreciation" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Aesthetic Appreciation</button>
+                <button class="styled-button emotion-button" data-emotion="Amusement" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Amusement</button>
+                <button class="styled-button emotion-button" data-emotion="Anger" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Anger</button>
+                <button class="styled-button emotion-button" data-emotion="Awe" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Awe</button>
+                <button class="styled-button emotion-button" data-emotion="Awkwardness" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Awkwardness</button>
+                <button class="styled-button emotion-button" data-emotion="Neutral" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Neutral</button>
+                <button class="styled-button emotion-button" data-emotion="Boredom" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Boredom</button>
+                <button class="styled-button emotion-button" data-emotion="Calmness" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Calmness</button>
+                <button class="styled-button emotion-button" data-emotion="Confusion" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Confusion</button>
+                <button class="styled-button emotion-button" data-emotion="Craving" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Craving</button>
+                <button class="styled-button emotion-button" data-emotion="Disgust" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Disgust</button>
+                <button class="styled-button emotion-button" data-emotion="Empathetic Pain" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Empathetic Pain</button>
+                <button class="styled-button emotion-button" data-emotion="Entrancement" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Entrancement</button>
+                <button class="styled-button emotion-button" data-emotion="Excitement" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Excitement</button>
+                <button class="styled-button emotion-button" data-emotion="Fear" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Fear</button>
+                <button class="styled-button emotion-button" data-emotion="Horror" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Horror</button>
+                <button class="styled-button emotion-button" data-emotion="Interest" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Interest</button>
+                <button class="styled-button emotion-button" data-emotion="Joy" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Joy</button>
+                <button class="styled-button emotion-button" data-emotion="Nostalgia" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Nostalgia</button>
+                <button class="styled-button emotion-button" data-emotion="Relief" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Relief</button>
+                <button class="styled-button emotion-button" data-emotion="Sadness" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Sadness</button>
+                <button class="styled-button emotion-button" data-emotion="Satisfaction" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Satisfaction</button>
+                <button class="styled-button emotion-button" data-emotion="Surprise" onclick = "get_recommendation_by_emotion(this.dataset.emotion)">Surprise</button>
+            </div>
+            <!-- Output Section -->
+            <div>
+                <label for="output">The Path Unveiled:</label>
+                <div id="output" class="output-display">
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', path='Byemotion.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdom of the Gita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='Byquestion.css') }}">
+</head>
+<body>
+
+    <!-- Main Card Container -->
+    <div class="card-container">
+        
+        <!-- Header Section -->
+        <header>
+            <h1 class="title-font">Divine Counsel</h1>
+            <p>"कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।"</p>
+            <p>"You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions."</p>
+        </header>
+        <!-- Main Content Area -->
+        <main>
+            <!-- User Input Section -->
+            <div class="input-section">
+                <label for="userInput">Seek your answer:</label>
+                <textarea 
+                    id="userInput" 
+                    rows="4" 
+                    placeholder="Pose your question to the eternal wisdom..."
+                ></textarea>
+                <div class="get-answer-container">
+                    <button id="getAnswerBtn" class="styled-button get-answer-button">Get Answer</button>
+                </div>
+            </div>
+
+            <!-- Output Section -->
+            <div>
+                <label for="output">The Path Unveiled:</label>
+                <div id="output" class="output-display">
+                    
+                </div>
+            </div>
+
+            <!-- Speak Button Action -->
+            <div class="button-container">
+                <button id="speakBtn" class="styled-button speak-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                    <span>Listen to the Counsel</span>
+                </button>
+            </div>
+        </main>
+    </div>
+    <!-- Full-page Loader Overlay -->
+    <div id="loader-overlay" style="display:none;">
+        <div class="spinner"></div>
+    </div>
+   <script src="{{ url_for('static', path='Byquestion.js') }}"></script>
+</body>
+</html>
