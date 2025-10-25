@@ -62,7 +62,7 @@ def get_verses_by_emotions(emotions,number_of_verses_per_emotion) -> list:
     resultant_verses=[]
     for emotion in emotions:
         cursor.execute(f"SELECT Verse_Text FROM Verse_Db WHERE Labels LIKE '%{emotion}%' ORDER BY RANDOM() LIMIT {number_of_verses_per_emotion}")
-        verses = cursor.fetchall()
+        verses = [v[0] for v in cursor.fetchall()]
         resultant_verses.extend(verses)
     print(resultant_verses)
     conn.close()
